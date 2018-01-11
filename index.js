@@ -1,0 +1,27 @@
+const {app, BrowserWindow, ipcMain} = require('electron')
+const url = require('url')
+const path = require('path')
+
+let win
+
+function createWindow() {
+   win = new BrowserWindow({width: 800, height: 600})
+   win.loadURL(url.format({
+      pathname: path.join(__dirname, 'index.html'),
+      protocol: 'file:',
+      slashes: true
+   }))
+   win2 = new BrowserWindow({width: 800, height: 600})
+   win2.loadURL(url.format({
+      pathname: path.join(__dirname, 'index2.html'),
+      protocol: 'file:',
+      slashes: true
+   }))
+   ipcMain.on('updateSettings', function(event, setting){
+        BrowserWindow.getAllWindows().forEach((win)=>{
+            b.webContents.send('test',setting);
+        })
+   })
+}
+
+app.on('ready', createWindow)

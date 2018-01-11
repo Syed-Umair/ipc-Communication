@@ -1,0 +1,14 @@
+{
+  "name": "Communication",
+  "version": "1.0.0",
+  "description": "ipc Communication Model",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Syed Umair",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "1.7.9"
+  }
+}
